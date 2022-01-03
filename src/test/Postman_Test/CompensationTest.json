@@ -1,0 +1,14 @@
+// URL 
+localhost:8080/compensation
+
+// Method
+POST
+
+// This is the body (content-type: application/json)
+{
+    "employee": {
+        "employeeId": "16a596ae-edd3-4847-99fe-c4518e82c86f"
+    },
+    "salary": 120000,
+    "effectiveDate": "2020-10-20"
+}

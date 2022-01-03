@@ -1,5 +1,8 @@
 package com.mindex.challenge.data;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Employee {
@@ -10,11 +13,22 @@ public class Employee {
     private String department;
     private List<Employee> directReports;
 
+    @JsonCreator
     public Employee() {
     }
 
+    @JsonCreator
+    public Employee(@JsonProperty("employeeId") String employeeId, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName, @JsonProperty("position") String position, @JsonProperty("department") String department, @JsonProperty("directReports") List<Employee> directReports){
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.position = position;
+        this.department = department;
+        this.directReports = directReports;
+    }
+
     public String getEmployeeId() {
-        return employeeId;
+        System.err.println("bhenchod"); return employeeId;
     }
 
     public void setEmployeeId(String employeeId) {
